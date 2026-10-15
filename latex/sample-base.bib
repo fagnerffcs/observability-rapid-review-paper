@@ -1,0 +1,588 @@
+
+% Journals
+
+% First the Full Name is given, then the abbreviation used in the AMS Math
+% Reviews, with an indication if it could not be found there.
+% Note the 2nd overwrites the 1st, so swap them if you want the full name.
+
+ %{AMS}
+ @String{AMSTrans = "American Mathematical Society Translations" }
+ @String{AMSTrans = "Amer. Math. Soc. Transl." }
+ @String{BullAMS = "Bulletin of the American Mathematical Society" }
+ @String{BullAMS = "Bull. Amer. Math. Soc." }
+ @String{ProcAMS = "Proceedings of the American Mathematical Society" }
+ @String{ProcAMS = "Proc. Amer. Math. Soc." }
+ @String{TransAMS = "Transactions of the American Mathematical Society" }
+ @String{TransAMS = "Trans. Amer. Math. Soc." }
+
+ %ACM
+ @String{CACM = "Communications of the {ACM}" }
+ @String{CACM = "Commun. {ACM}" }
+ @String{CompServ = "Comput. Surveys" }
+ @String{JACM = "J. ACM" }
+ @String{ACMMathSoft = "{ACM} Transactions on Mathematical Software" }
+ @String{ACMMathSoft = "{ACM} Trans. Math. Software" }
+ @String{SIGNUM = "{ACM} {SIGNUM} Newsletter" }
+ @String{SIGNUM = "{ACM} {SIGNUM} Newslett." }
+
+ @String{AmerSocio = "American Journal of Sociology" }
+ @String{AmerStatAssoc = "Journal of the American Statistical Association" }
+ @String{AmerStatAssoc = "J. Amer. Statist. Assoc." }
+ @String{ApplMathComp = "Applied Mathematics and Computation" }
+ @String{ApplMathComp = "Appl. Math. Comput." }
+ @String{AmerMathMonthly = "American Mathematical Monthly" }
+ @String{AmerMathMonthly = "Amer. Math. Monthly" }
+ @String{BIT = "{BIT}" }
+ @String{BritStatPsych = "British Journal of Mathematical and Statistical
+          Psychology" }
+ @String{BritStatPsych = "Brit. J. Math. Statist. Psych." }
+ @String{CanMathBull = "Canadian Mathematical Bulletin" }
+ @String{CanMathBull = "Canad. Math. Bull." }
+ @String{CompApplMath = "Journal of Computational and Applied Mathematics" }
+ @String{CompApplMath = "J. Comput. Appl. Math." }
+ @String{CompPhys = "Journal of Computational Physics" }
+ @String{CompPhys = "J. Comput. Phys." }
+ @String{CompStruct = "Computers and Structures" }
+ @String{CompStruct = "Comput. \& Structures" }
+ @String{CompJour = "The Computer Journal" }
+ @String{CompJour = "Comput. J." }
+ @String{CompSysSci = "Journal of Computer and System Sciences" }
+ @String{CompSysSci = "J. Comput. System Sci." }
+ @String{Computing = "Computing" }
+ @String{ContempMath = "Contemporary Mathematics" }
+ @String{ContempMath = "Contemp. Math." }
+ @String{Crelle = "Crelle's Journal" }
+ @String{GiornaleMath = "Giornale di Mathematiche" }
+ @String{GiornaleMath = "Giorn. Mat." } % didn't find in AMS MR., ibid.
+
+ %IEEE
+ @String{Computer = "{IEEE} Computer" }
+ @String{IEEETransComp = "{IEEE} Transactions on Computers" }
+ @String{IEEETransComp = "{IEEE} Trans. Comput." }
+ @String{IEEETransAC = "{IEEE} Transactions on Automatic Control" }
+ @String{IEEETransAC = "{IEEE} Trans. Automat. Control" }
+ @String{IEEESpec = "{IEEE} Spectrum" } % didn't find in AMS MR
+ @String{ProcIEEE = "Proceedings of the {IEEE}" }
+ @String{ProcIEEE = "Proc. {IEEE}" } % didn't find in AMS MR
+ @String{IEEETransAeroElec = "{IEEE} Transactions on Aerospace and Electronic
+     Systems" }
+ @String{IEEETransAeroElec = "{IEEE} Trans. Aerospace Electron. Systems" }
+
+ @String{IMANumerAna = "{IMA} Journal of Numerical Analysis" }
+ @String{IMANumerAna = "{IMA} J. Numer. Anal." }
+ @String{InfProcLet = "Information Processing Letters" }
+ @String{InfProcLet = "Inform. Process. Lett." }
+ @String{InstMathApp = "Journal of the Institute of Mathematics and
+     its Applications" }
+ @String{InstMathApp = "J. Inst. Math. Appl." }
+ @String{IntControl = "International Journal of Control" }
+ @String{IntControl = "Internat. J. Control" }
+ @String{IntNumerEng = "International Journal for Numerical Methods in
+     Engineering" }
+ @String{IntNumerEng = "Internat. J. Numer. Methods Engrg." }
+ @String{IntSuper = "International Journal of Supercomputing Applications" }
+ @String{IntSuper = "Internat. J. Supercomputing Applic." } % didn't find
+%% in AMS MR
+ @String{Kibernetika = "Kibernetika" }
+ @String{JResNatBurStand = "Journal of Research of the National Bureau
+     of Standards" }
+ @String{JResNatBurStand = "J. Res. Nat. Bur. Standards" }
+ @String{LinAlgApp = "Linear Algebra and its Applications" }
+ @String{LinAlgApp = "Linear Algebra Appl." }
+ @String{MathAnaAppl = "Journal of Mathematical Analysis and Applications" }
+ @String{MathAnaAppl = "J. Math. Anal. Appl." }
+ @String{MathAnnalen = "Mathematische Annalen" }
+ @String{MathAnnalen = "Math. Ann." }
+ @String{MathPhys = "Journal of Mathematical Physics" }
+ @String{MathPhys = "J. Math. Phys." }
+ @String{MathComp = "Mathematics of Computation" }
+ @String{MathComp = "Math. Comp." }
+ @String{MathScand = "Mathematica Scandinavica" }
+ @String{MathScand = "Math. Scand." }
+ @String{TablesAidsComp = "Mathematical Tables and Other Aids to Computation" }
+ @String{TablesAidsComp = "Math. Tables Aids Comput." }
+ @String{NumerMath = "Numerische Mathematik" }
+ @String{NumerMath = "Numer. Math." }
+ @String{PacificMath = "Pacific Journal of Mathematics" }
+ @String{PacificMath = "Pacific J. Math." }
+ @String{ParDistComp = "Journal of Parallel and Distributed Computing" }
+ @String{ParDistComp = "J. Parallel and Distrib. Comput." } % didn't find
+%% in AMS MR
+ @String{ParComputing = "Parallel Computing" }
+ @String{ParComputing = "Parallel Comput." }
+ @String{PhilMag = "Philosophical Magazine" }
+ @String{PhilMag = "Philos. Mag." }
+ @String{ProcNAS = "Proceedings of the National Academy of Sciences
+                    of the USA" }
+ @String{ProcNAS = "Proc. Nat. Acad. Sci. U. S. A." }
+ @String{Psychometrika = "Psychometrika" }
+ @String{QuartMath = "Quarterly Journal of Mathematics, Oxford, Series (2)" }
+ @String{QuartMath = "Quart. J. Math. Oxford Ser. (2)" }
+ @String{QuartApplMath = "Quarterly of Applied Mathematics" }
+ @String{QuartApplMath = "Quart. Appl. Math." }
+ @String{RevueInstStat = "Review of the International Statisical Institute" }
+ @String{RevueInstStat = "Rev. Inst. Internat. Statist." }
+
+ %SIAM
+ @String{JSIAM = "Journal of the Society for Industrial and Applied
+     Mathematics" }
+ @String{JSIAM = "J. Soc. Indust. Appl. Math." }
+ @String{JSIAMB = "Journal of the Society for Industrial and Applied
+     Mathematics, Series B, Numerical Analysis" }
+ @String{JSIAMB = "J. Soc. Indust. Appl. Math. Ser. B Numer. Anal." }
+ @String{SIAMAlgMeth = "{SIAM} Journal on Algebraic and Discrete Methods" }
+ @String{SIAMAlgMeth = "{SIAM} J. Algebraic Discrete Methods" }
+ @String{SIAMAppMath = "{SIAM} Journal on Applied Mathematics" }
+ @String{SIAMAppMath = "{SIAM} J. Appl. Math." }
+ @String{SIAMComp = "{SIAM} Journal on Computing" }
+ @String{SIAMComp = "{SIAM} J. Comput." }
+ @String{SIAMMatrix = "{SIAM} Journal on Matrix Analysis and Applications" }
+ @String{SIAMMatrix = "{SIAM} J. Matrix Anal. Appl." }
+ @String{SIAMNumAnal = "{SIAM} Journal on Numerical Analysis" }
+ @String{SIAMNumAnal = "{SIAM} J. Numer. Anal." }
+ @String{SIAMReview = "{SIAM} Review" }
+ @String{SIAMReview = "{SIAM} Rev." }
+ @String{SIAMSciStat = "{SIAM} Journal on Scientific and Statistical
+     Computing" }
+ @String{SIAMSciStat = "{SIAM} J. Sci. Statist. Comput." }
+
+ @String{SoftPracExp = "Software Practice and Experience" }
+ @String{SoftPracExp = "Software Prac. Experience" } % didn't find in AMS MR
+ @String{StatScience = "Statistical Science" }
+ @String{StatScience = "Statist. Sci." }
+ @String{Techno = "Technometrics" }
+ @String{USSRCompMathPhys = "{USSR} Computational Mathematics and Mathematical
+     Physics" }
+ @String{USSRCompMathPhys = "{U. S. S. R.} Comput. Math. and Math. Phys." }
+ @String{VLSICompSys = "Journal of {VLSI} and Computer Systems" }
+ @String{VLSICompSys = "J. {VLSI} Comput. Syst." }
+ @String{ZAngewMathMech = "Zeitschrift fur Angewandte Mathematik und
+     Mechanik" }
+ @String{ZAngewMathMech = "Z. Angew. Math. Mech." }
+ @String{ZAngewMathPhys = "Zeitschrift fur Angewandte Mathematik und Physik" }
+ @String{ZAngewMathPhys = "Z. Angew. Math. Phys." }
+
+% Publishers % ================================================= |
+
+ @String{Academic = "Academic Press" }
+ @String{ACMPress = "{ACM} Press" }
+ @String{AdamHilger = "Adam Hilger" }
+ @String{AddisonWesley = "Addison-Wesley" }
+ @String{AllynBacon = "Allyn and Bacon" }
+ @String{AMS = "American Mathematical Society" }
+ @String{Birkhauser = "Birkh{\"a}user" }
+ @String{CambridgePress = "Cambridge University Press" }
+ @String{Chelsea = "Chelsea" }
+ @String{ClaredonPress = "Claredon Press" }
+ @String{DoverPub = "Dover Publications" }
+ @String{Eyolles = "Eyolles" }
+ @String{HoltRinehartWinston = "Holt, Rinehart and Winston" }
+ @String{Interscience = "Interscience" }
+ @String{JohnsHopkinsPress = "The Johns Hopkins University Press" }
+ @String{JohnWileySons = "John Wiley and Sons" }
+ @String{Macmillan = "Macmillan" }
+ @String{MathWorks = "The Math Works Inc." }
+ @String{McGrawHill = "McGraw-Hill" }
+ @String{NatBurStd = "National Bureau of Standards" }
+ @String{NorthHolland = "North-Holland" }
+ @String{OxfordPress = "Oxford University Press" }  %address Oxford or London?
+ @String{PergamonPress = "Pergamon Press" }
+ @String{PlenumPress = "Plenum Press" }
+ @String{PrenticeHall = "Prentice-Hall" }
+ @String{SIAMPub = "{SIAM} Publications" }
+ @String{Springer = "Springer-Verlag" }
+ @String{TexasPress = "University of Texas Press" }
+ @String{VanNostrand = "Van Nostrand" }
+ @String{WHFreeman = "W. H. Freeman and Co." }
+
+%Entries
+
+@article{araujo_24,
+  author = {Araujo, A. and Costa, B. and Bachiega Jr, J. and Carvalho, L. R. and Buyya, R.},
+  title = {Observability in Fog Computing},
+  journal = {arXiv},
+  year = {2024},
+  eprint = {2411.17753},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2411.17753}
+}
+
+@misc{aws_2025,
+  author = {{AWS}},
+  title = {What is Cloud Native?},
+  year = {2025},
+  url = {https://aws.amazon.com/what-is/cloud-native/},
+  note = {Acesso em: 26 out. 2025}
+}
+
+@article{bhatia_2025,
+    author = {Bhatia, Rahul},
+    title = {What Is Enterprise Observability? A Beginner's Guide to Seeing Your Whole System},
+    journal = {Sarcouncil Journal of Engineering and Computer Sciences},
+    year = 2025,
+    volume = {4},
+    issue = {7},
+    isnn = {2945-3585},
+    url = {https://sarcouncil.com/download-article/SJECS-194_-_2025-684-694.pdf}
+}
+
+@inproceedings{cartaxo_2016,
+  author = {Cartaxo, Bruno and Pinto, Gustavo and Vieira, Elton and Soares, Sérgio},
+  title = {Evidence Briefings: Towards a Medium to Transfer Knowledge from Systematic Reviews to Practitioners},
+  booktitle = {Proceedings of the 10th ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM '16)},
+  year = {2016},
+  doi = {10.1145/2961111.2962603}
+}
+
+@inproceedings{cartaxo_2018,
+  author = {Cartaxo, Bruno and Pinto, Gustavo and Soares, Sergio},
+  title = {The Role of Rapid Reviews in Supporting Decision-Making in Software Engineering Practice},
+  booktitle = {Proceedings of the 22nd International Conference on Evaluation and Assessment in Software Engineering (EASE '18)},
+  year = {2018},
+  url = {https://dl.acm.org/doi/10.1145/3210459.3210462}
+}
+
+@article{deng_2024,
+  author={Deng, Shuiguang and Zhao, Hailiang and Huang, Binbin and Zhang, Cheng and Chen, Feiyi and Deng, Yinuo and Yin, Jianwei and Dustdar, Schahram and Zomaya, Albert Y.},
+  journal={Proceedings of the IEEE}, 
+  title={Cloud-Native Computing: A Survey From the Perspective of Services}, 
+  year={2024},
+  volume={112},
+  number={1},
+  pages={12-46},
+  keywords={Cloud computing;Microservice architectures;Surveys;Software engineering;Computer architecture;Service level agreements;Research initiatives;Life cycle assessment;Modeling;Cloud-native applications;microservice;research roadmap;service life-cycle management;survey},
+  doi={10.1109/JPROC.2024.3353855}
+}
+
+@article{dondelinger_2013,
+  author = {Dondelinger, Robert},
+  title = {Telemetry Systems},
+  journal = {Biomedical Instrumentation \& Technology},
+  volume = {47},
+  number = {1},
+  pages = {69--75},
+  year = {2013}
+}
+
+@misc{dzone_2019,
+  author = {{Kubernetes}},
+  title = {Kubernetes},
+  year = {2019},
+  url = {https://kubernetes.io/},
+  note = {Acesso em: 24 mai. 2019}
+}
+
+@misc{ellingwood_2017,
+  author = {Ellingwood, J.},
+  title = {An Introduction to Metrics, Monitoring, and Alerting},
+  year = {2017},
+  url = {https://www.digitalocean.com/community/tutorials/an-introduction-to-metrics-monitoring-and-alerting},
+  note = {Acesso em: 28 out. 2025},
+  journal = {DigitalOcean}
+}
+
+@article{faseeha_2025,
+  author={Faseeha, Ummay and Jamil Syed, Hassan and Samad, Fahad and Zehra, Sehar and Ahmed, Hamza},
+  journal={IEEE Access}, 
+  title={Observability in Microservices: An In-Depth Exploration of Frameworks, Challenges, and Deployment Paradigms}, 
+  year={2025},
+  volume={13},
+  number={},
+  pages={72011-72039},
+  keywords={Observability;Microservice architectures;Monitoring;Computer architecture;Cloud computing;Reliability;Kernel;Surveys;Real-time systems;Taxonomy;Microservices observability;cloud-based microservices;system reliability;containerized computing environments;real-time performance monitoring},
+  doi={10.1109/ACCESS.2025.3562125}
+}
+
+@article{gannon_2017,
+  author = {Gannon, D. and Barga, R. and Sundaresan, N.},
+  title = {Cloud-Native Applications},
+  journal = {IEEE Cloud Computing},
+  volume = {4},
+  number = {5},
+  pages = {16--21},
+  year = {2017},
+  doi = {10.1109/MCC.2017.4250939}
+}
+
+@article{gomes_2025,
+author = {Gomes, Francisco and Rego, Paulo and Trinta, Fernando},
+title = {A systematic mapping study on observability of microservices-based applications: fundamentals, classifications, and challenges},
+year = {2025},
+issue_date = {Aug 2025},
+publisher = {Springer-Verlag},
+address = {Berlin, Heidelberg},
+volume = {107},
+number = {9},
+issn = {0010-485X},
+url = {https://doi.org/10.1007/s00607-025-01540-w},
+doi = {10.1007/s00607-025-01540-w},
+abstract = {Microservices-based applications are widely adopted for their scalability and support for continuous integration. While their modularity reduces development complexity, it increases operational and maintenance challenges, leading to more frequent and intricate system malfunctions. As cloud-native applications (CNAs) become increasingly sophisticated, traditional monitoring solutions prove inadequate, raising the risk of failures. These failures can include performance degradation, service outages, scalability limitations, and even potential data integrity. This has led to the concept of observability, defined as the ability to understand and diagnose a system’s internal behavior by analyzing its external states. In CNAs, resource allocation is dynamic and dependent on factors like system health, making observability crucial not only for monitoring application health but also for triggering auto-scaling when necessary. Although some studies explore observability concepts, tools, and challenges, there is no comprehensive taxonomy. This paper proposes a taxonomy for observability in microservices-based applications, with a specific focus on auto-scaling, supported by a systematic mapping study (SMS). We analyze 66 studies published between 2019 and 2024, providing a thorough overview of observability. Additionally, the SMS highlights tools, benchmarking applications, real-world datasets, and ongoing issues in the field. This work aims to offer researchers an up-to-date and comprehensive resource for understanding observability in the context of CNAs.},
+journal = {Computing},
+month = aug,
+numpages = {25},
+keywords = {Monitoring, Observability, Microservices, Taxonomy, Classifications, Challenges, 68M14}
+}
+
+@article{han_2024,
+  author={Han, Yongqi and Du, Qingfeng and Huang, Ying and Li, Pengsheng and Shi, Xiaonan and Wu, Jiaqi and Fang, Pei and Tian, Fulong and He, Cheng},
+  journal={IEEE Transactions on Services Computing}, 
+  title={Holistic Root Cause Analysis for Failures in Cloud-Native Systems Through Observability Data}, 
+  year={2024},
+  volume={17},
+  number={6},
+  pages={3789-3802},
+  keywords={Observability;Measurement;Cloud computing;Microservice architectures;Fault diagnosis;Root cause analysis;Vectors;Scalability;Reviews;Resilience;Cloud-native systems;heterogeneous systems;multimodal data;root cause analysis},
+  doi={10.1109/TSC.2024.3478759}
+}
+
+@mastersthesis{hartikainen_2024,
+  author = {Hartikainen, M.},
+  title = {Observability for Cloud Native Platforms},
+  school = {Hame University of Applied Sciences},
+  year = {2024},
+  address = {Hameenlinna, Finland},
+  url = {https://hamk.finna.fi/Record/theseus_hamk.10024_804045},
+  note = {Acesso em: 28 out. 2025}
+}
+
+@incollection{hidalgo_2023,
+  author = {Hidalgo, Mauricio and Astudillo, Hernán and Castro, Laura},
+  title = {Challenges to Use Role Playing in Software Engineering Education: A Rapid Review},
+  booktitle = {Applied Informatics},
+  series = {Communications in Computer and Information Science},
+  volume = {1874},
+  pages = {1--15},
+  publisher = {Springer},
+  year = {2023},
+  doi = {10.1007/978-3-031-46813-1_17}
+}
+
+@inproceedings{jayathilake_2012,
+  author={Jayathilake, Dileepa},
+  booktitle={2012 Ninth International Conference on Computer Science and Software Engineering (JCSSE)}, 
+  title={Towards structured log analysis}, 
+  year={2012},
+  volume={},
+  number={},
+  pages={259-264},
+  keywords={Data mining;Software;Organizations;Databases;Standards;Engines;Monitoring;log analysis;structured logs;log data extraction;log management;mind map},
+  doi={10.1109/JCSSE.2012.6261962}
+}
+
+@article{kalman_1959,
+  author = {Kalman, R. E.},
+  title = {On the General Theory of Control Systems},
+  journal = {IRE Transactions on Automatic Control},
+  volume = {4},
+  number = {3},
+  pages = {110},
+  year = {1959}
+}
+
+@article{kokol_2024,
+author = {Kokol, Peter},
+title = {The Use of AI in Software Engineering: A Synthetic Knowledge Synthesis of the Recent Research Literature},
+journal = {Information},
+volume = {15},
+year = {2024},
+number = {6},
+article-number = {354},
+url = {https://www.mdpi.com/2078-2489/15/6/354},
+issn = {2078-2489},
+doi = {10.3390/info15060354}
+}
+
+@article{kosinska_2023,
+  author = {Kosińska, J. and Baliś, B. and Konieczny, M. and Malawski, M. and Zieliński, S.},
+  title = {Toward the Observability of Cloud-Native Applications: The Overview of the State-of-the-Art},
+  journal = {IEEE Access},
+  volume = {11},
+  pages = {73036--73052},
+  year = {2023},
+  doi = {10.1109/ACCESS.2023.3281860},
+  url = {https://ieeexplore.ieee.org/document/10141603},
+  note = {Acesso em: 19 set. 2025}
+}
+
+@inproceedings{liu_2020,
+  author = {Liu, G. and Huang, B. and Liang, Z. and Qin, M. and Zhou, H. and Li, Z.},
+  title = {Microservices: Architecture, Container, and Challenges},
+  booktitle = {2020 IEEE 20th International Conference on Software Quality, Reliability and Security Companion (QRS-C)},
+  pages = {629--635},
+  year = {2020},
+  doi = {10.1109/QRS-C51114.2020.00107}
+}
+
+@article{monolith_2022,
+  author = {Blinowski, Grzegorz and Ojdowska, Anna and Przybyłek, Adam},
+  title = {Monolithic vs. Microservice Architecture: A Performance and Scalability Evaluation},
+  journal = {IEEE Access},
+  volume = {10},
+  pages = {20357--20374},
+  year = {2022}
+}
+
+@misc{oracle_2021,
+  author = {{ORACLE}},
+  title = {What Is Cloud Native?},
+  year = {2021},
+  url = {https://www.oracle.com/cloud/cloud-native/what-is-cloud-native/},
+  note = {Acesso em: 19 set. 2025}
+}
+
+@misc{otel_primer_2025,
+  author = {{OpenTelemetry}},
+  title = {Observability Primer},
+  year = {2025},
+  url = {https://opentelemetry.io/docs/concepts/observability-primer/},
+  note = {Acesso em: 28 out. 2025}
+}
+
+@book{rise_2023,
+  author = {Liz Rice},
+  title = {Learning eBPF: Programming the Linux Kernel for Enhanced Observability, Networking, and Security},
+  publisher = {O'Reilly Media},
+  year = {2023},
+  address = {Sebastopol, CA, USA},
+  url = {https://isovalent.com/learning-ebpf}
+}
+
+@article{sakhamuri_25,
+  author = {Sakhamuri, Naga Sai Bandhavi},
+  title = {AIOps-Driven Adaptive Observability Framework for Cloud-Native Applications},
+  journal = {World Journal of Advanced Engineering Technology and Sciences},
+  volume = {15},
+  number = {2},
+  pages = {1774--1782},
+  year = {2025},
+  url = {https://journals-sol.sbc.org.br/index.php/jisa/article/view/3551},
+  note = {Acess at: 08 aug. 2025}
+}
+
+@article{sakinala_2025,
+    author = {Kowshik Sakinala},
+    title = {Monitoring and Observability for Cloud-Native Applications},
+    journal = {Journal of Computer Science and Technology Studies},
+    year = {2025},
+    doi = {10.32996/jcsts.2025.7.8.13},
+    issn = {2709-104X}
+}
+
+@article{silverman_1967,
+  author = {Silverman, L. M. and Meadows, H. E.},
+  title = {Controllability and Observability in Time-Variable Linear Systems},
+  journal = {SIAM Journal on Control},
+  volume = {5},
+  number = {1},
+  pages = {64--73},
+  year = {1967},
+  doi = {10.1137/0305005}
+}
+
+@misc{splunk_2025,
+    author = {{Splunk}},
+    title = {A Beginner's Guide to Observability},
+    url = {https://www.uk.cdw.com/media/bign0otq/beginners-guide-to-observability0923.pdf},
+    note = {Access at: 14 feb. 2026}
+}
+
+@article{songtab_1984,
+  author = {Sontag, Eduardo D.},
+  title = {A Concept of Local Observability},
+  journal = {Systems \& Control Letters},
+  volume = {5},
+  number = {1},
+  pages = {41--47},
+  year = {1984}
+}
+
+@book{sridharan_2018,
+  author = {Sridharan, Cindy},
+  title = {Distributed Systems Observability: A Guide to Building Robust Systems},
+  publisher = {O'Reilly Media},
+  address = {Sebastopol, CA},
+  year = {2018}
+}
+
+@article{stanley_2021,
+  author = {Lima, Stanley and others},
+  title = {Improving Observability in Event Sourcing Systems},
+  journal = {Journal of Systems and Software},
+  volume = {181},
+  pages = {111015},
+  year = {2021}
+}
+
+@incollection{ribbens_2013,
+title = {Chapter 1 - The Systems Approach to Control and Instrumentation},
+editor = {William B. Ribbens},
+booktitle = {Understanding Automotive Electronics (Seventh Edition)},
+publisher = {Butterworth-Heinemann},
+edition = {Seventh Edition},
+address = {Oxford},
+pages = {1-49},
+year = {2013},
+isbn = {978-0-08-097097-4},
+doi = {https://doi.org/10.1016/B978-0-08-097097-4.00001-1},
+url = {https://www.sciencedirect.com/science/article/pii/B9780080970974000011},
+author = {William B. Ribbens}
+}
+
+@misc{rotwal_2024,
+  author = {Rotwal, Paramvir},
+  title = {Monitoring Logs with Prometheus, Grafana and Fluentd},
+  year = {2024},
+  url = {https://medium.com/@pveerrotwal/monitoring-logs-with-prometheus-grafana-and-fluentd-5db0617b9c57},
+  note = {Acesso em: 30 out. 2025}
+}
+
+@book{sre_2016,
+  author = {Beyer, B. and Jones, C. and Petoff, J. and Murphy, N. R.},
+  title = {Site Reliability Engineering: How Google Runs Production Systems},
+  publisher = {O'Reilly Media},
+  year = {2016},
+  chapter = {11}
+}
+
+@article{usman_2022,
+  author = {Usman, M. and Ferlin, S. and Brunstrom, A. and Taheri, J.},
+  title = {A Survey on Observability of Distributed Edge \& Container-Based Microservices},
+  journal = {IEEE Access},
+  volume = {10},
+  pages = {86904--86919},
+  year = {2022},
+  doi = {10.1109/ACCESS.2022.3193102}
+}
+
+@misc{vancamp24,
+  author       = {Vancamp, E.},
+  title        = {Revolutionizing Cloud-Native Applications: The Rise of Kubernetes and Container Orchestration},
+  howpublished = {Medium},
+  year         = {2024},
+  note         = {Acesso em: 04 ago. 2025},
+  url          = {https://medium.com/all-things-work/revolutionizing-cloud-native-applications-the-rise-of-kubernetes-and-container-orchestration-3b2f35a1a995}
+}
+
+@inproceedings{wei_2025,
+  author={Wei, Haoran and Madhavji, Nazim and Steinbacher, John},
+  booktitle={2025 IEEE 22nd International Conference on Software Architecture (ICSA)}, 
+  title={A Map of Cloud-Native Practices and Tools to Achieve Desirable System Qualities}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={221-231},
+  keywords={Software architecture;Reviews;Standards organizations;Microservice architectures;Organizations;Software systems;cloud-native;quality attributes;microservices},
+  doi={10.1109/ICSA65012.2025.00030}
+}
+
+@article{zanatta_23,
+  author = {Bruno, Gustavo Zanatta and others},
+  title = {Anomaly Detection in Cloud-Native B5G Systems Using Observability and Machine Learning COTS Solutions},
+  journal = {Journal of Internet Services and Applications},
+  volume = {14},
+  number = {1},
+  pages = {189--199},
+  year = {2023},
+  url = {https://journals-sol.sbc.org.br/index.php/jisa/article/view/3551},
+  note = {Acesso em: 08 ago. 2025}
+}
