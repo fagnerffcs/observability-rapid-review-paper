@@ -1,0 +1,47 @@
+\begin{figure}[htbp]
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tikzpicture}[
+    font=\sffamily,
+    circle_node/.style={circle, minimum size=4.6cm, fill opacity=0.16, text opacity=1, draw, thick},
+    label_title/.style={font=\sffamily\bfseries\footnotesize, align=center},
+    bullet_text/.style={font=\sffamily\scriptsize, align=center, text width=2.2cm},
+    arrow_style/.style={-{Stealth[length=2.5mm, width=2mm]}, thick, draw=darkgray}
+]
+
+    % Circles (Radius = 2.3cm; Centers at -1.4 and 1.4 -> Intersection width = 1.8cm)
+    \node[circle_node, fill=cyan!70!blue, draw=cyan!80!black] (mon) at (-1.4, 0) {};
+    \node[circle_node, fill=orange!80!red, draw=orange!90!black] (obs) at (1.4, 0) {};
+
+    % Left Side: Monitoring Specific (Safe horizontal zone: -3.5 to -0.9)
+    \node[label_title, text=cyan!40!black] at (-2.25, 0.85) {MONITORING};
+    \node[bullet_text, text=black!85] at (-2.25, -0.15) {
+        Predefined Thresholds\\[2pt]
+        Health Checks\\[2pt]
+        Known Failure Modes\\[1pt]
+        (\textit{Known Unknowns})
+    };
+
+    % Right Side: Observability Specific (Safe horizontal zone: 0.9 to 3.5)
+    \node[label_title, text=orange!50!black] at (2.25, 0.85) {OBSERVABILITY};
+    \node[bullet_text, text=black!85] at (2.25, -0.15) {
+        Distributed Traces\\[2pt]
+        Platform Events\\[2pt]
+        Kernel/eBPF Context\\[1pt]
+        (\textit{Unknown Unknowns})
+    };
+
+    % Intersection: Shared Foundation (Safe horizontal zone: -0.75 to 0.75)
+    \node[font=\sffamily\bfseries\tiny, align=center, text=black!90] at (0, 0.55) {SHARED\\TELEMETRY};
+    \node[font=\sffamily\scriptsize, align=center, fill=white, fill opacity=0.9, text opacity=1, inner sep=3pt, rounded corners=2pt, draw=black!40] at (0, -0.25) {\textbf{Metrics}\\ \& \\\textbf{Logs}};
+
+    % Top and Bottom Workflow Arrows
+    \draw[arrow_style] (-1.3, 2.35) to[bend left=22] node[midway, above, font=\sffamily\bfseries\scriptsize, text=darkgray] {Symptom Alerting (What is broken?)} (1.3, 2.35);
+    \draw[arrow_style] (1.3, -2.35) to[bend left=22] node[midway, below, font=\sffamily\bfseries\scriptsize, text=darkgray] {Root Cause Analysis \& New Rules (Why?)} (-1.3, -2.35);
+
+\end{tikzpicture}%
+}
+\caption{Operational Relationship and Telemetry Overlap between Monitoring and Observability.}
+\Description{Image describing Operational Relationship and Telemetry Overlap between Monitoring and Observability.}
+\label{fig:obs-vs-mon}
+\end{figure}

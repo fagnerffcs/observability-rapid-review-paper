@@ -20,6 +20,13 @@
     \providecommand\BibTeX{{Bib\TeX}}
 }
 
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, fit, backgrounds, calc}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{stfloats}
+
 \begin{document}
 
 \title{A Rapid Review on Observability of Cloud-Native Applications using Kubernetes}
@@ -102,13 +109,7 @@ Cloud-native computing represents an approach to building, deploying, and operat
 
 Historically, observability originates from modern control theory as formulated by Rudolf Kálmán \cite{kalman_1959}: a mathematical measure of how well internal system states can be inferred from knowledge of its external outputs \cite{songtab_1984}. In software systems, this concept has evolved into an engineering discipline centered on four complementary telemetry pillars \cite{kosinska_2023, bhatia_2025}. \textbf{Metrics} provide numeric, aggregated measurements of resource utilization, throughput, or error rates captured over uniform time intervals (e.g., CPU saturation, memory resident set size, request latency percentiles) \cite{ellingwood_2017}. \textbf{Logs} offer discrete, timestamped textual records that capture contextual execution details and state changes within individual services, providing indispensable forensic data for post-mortem debugging \cite{sre_2016}. \textbf{Distributed Traces} supply structured representations of end-to-end request journeys across microservice boundaries, tracking causally linked spans that record execution latencies and inter-service metadata \cite{otel_primer_2025}. Finally, \textbf{Events} capture asynchronous lifecycle transitions and operational alerts produced by the container runtime, Linux kernel, or Kubernetes control plane (e.g., pod evictions, OOM kills, deployment rollouts) \cite{hartikainen_2024}. As Hartikainen \cite{hartikainen_2024} notes, the mere collection of these four telemetry sources does not automatically render a platform observable; true observability is achieved only when these streams are semantically correlated and converted into actionable diagnostic intelligence.
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.78\linewidth]{img/monitoring-vs-observability.png}
-    \caption{Conceptual Relationship between Monitoring and Observability.}
-    \Description{Venn diagram and concept map illustrating how traditional monitoring focuses on known failure modes using predefined thresholds, whereas observability encompasses telemetry synthesis to diagnose unknown unknowns and emergent systemic failures.}
-    \label{fig:obs-vs-mon}
-\end{figure}
+\input{figures/fig-obs-vs-mon}
 
 Although frequently conflated in industrial vernacular, monitoring and observability represent distinct operational paradigms (Fig.~\ref{fig:obs-vs-mon}). Monitoring relies on predefined thresholds and predetermined metrics to verify whether a system is behaving as expected, detecting known failure modes (\textit{known knowns} and \textit{known unknowns}). Conversely, observability provides the semantic depth and cross-cutting trace context required to explore why and where unprecedented failures occur in complex distributed architectures (\textit{unknown unknowns}). Thus, monitoring is an operational subset and prerequisite of observability \cite{sridharan_2018}.
 
@@ -168,6 +169,8 @@ To address search string boundaries and discover influential unindexed works, ci
 
 \textbf{Cross-Validation and Conflict Resolution:} While initial title and abstract filtering was conducted by the primary researcher, full-text eligibility reviews and data extractions were verified through paired cross-validation by a secondary author. Disagreements regarding study categorization or inclusion were resolved through joint consensus meetings with the senior supervising researcher to ensure consistency.
 
+\textbf{Quality Assessment (QA):} To evaluate the methodological rigor of the 10 included primary studies, two researchers independently assessed each paper against four quality criteria scored as Yes ($1.0$), Partially ($0.5$), or No ($0.0$): (\textbf{QA1}) Are the research objectives and cloud-native observability scope clearly defined? (\textbf{QA2}) Is the architectural design, taxonomy, or review protocol explicitly documented and reproducible? (\textbf{QA3}) Are open-source tools and Kubernetes integration layers analyzed with concrete technical depth? (\textbf{QA4}) Are the findings, limitations, and empirical evaluations clearly substantiated? All included studies achieved a score $\ge 3.0$ out of $4.0$ (mean $= 3.65$), confirming high structural quality across the synthesis corpus.
+
 \subsection{Data Extraction and Synthesis}
 For each of the 10 included primary studies, data were extracted into structured Parsifal forms and compiled into an audit extraction matrix: study metadata, addressed research questions (RQ1–RQ4), telemetry pillars analyzed, investigated open-source tools, proposed architectural patterns, identified research gaps, and recommended future directions. The extracted evidence was qualitatively synthesized to construct the comparative tables, the maturity model, and the research roadmap.
 
@@ -207,36 +210,27 @@ In the logging domain, Grafana Loki and Fluentd lead Kubernetes log management, 
 
 \input{tables/tbl-studies-versus-rqs}
 
-Table~\ref{tab:rq_mapping} maps the 10 included primary studies against the four research questions, detailing their publication year, venue type, and telemetry scope.
+Table~\ref{tab:rq_mapping} maps the 10 included primary studies against the four research questions, detailing their publication year, venue type, telemetry scope, and quality assessment score.
 
 \subsection{Research Gaps and Synthesis of Gaps (RQ04)}
 Table~\ref{tab:related_works} synthesizes the specific research gaps, architectural limitations, and proposed future directions extracted from the 10 primary studies.
 
 \input{tables/tbl-related-works}
 
+% Posicionado aqui para que o LaTeX renderize no topo da página da Seção 4.5
+\input{tables/tbl-omm-arch}
+
 The synthesis exposes three pervasive challenges: (1) stack fragmentation and the absence of unified semantic schemas, which prevent automated end-to-end tracing across disaggregated components; (2) excessive computational overhead (CPU, memory footprint, and network saturation) imposed by full-fidelity telemetry collection in high-throughput or resource-constrained environments \cite{zanatta_23, araujo_24}; and (3) telemetry overload, where the sheer volume of unstructured metrics and logs overwhelms human operators during complex incident response \cite{han_2024, deng_2024}.
 
 \subsection{Observability Maturity Model (OMM)}
-To provide software architects with a grounded diagnostic instrument for cloud-native platforms, we formalize the Observability Maturity Model (OMM), illustrated in Figure~\ref{fig:obs-arch}. Grounded in the design science principles of Becker et al. \cite{becker_2009}, de Bruin et al. \cite{debruin_2005}, and Pöppelbuß and Röglinger \cite{poppelbuss_2011}, and building upon the observability capability foundations \cite{valbusa_2025, agarwal_2022, nethala_2025, patel_2025} reviewed in Section~\ref{sec:background}, our model systematically derives its evolutionary stages from the empirical evidence synthesized across our 10 primary studies ($N = 10$). Following the procedural guidelines for maturity model development \cite{becker_2009, wendler_2012}, the OMM establishes mutually exclusive capability levels and actionable progression criteria tailored to the dynamic realities of Kubernetes clusters, overcoming the limitations of previous models that remained either abstract or disconnected from containerized orchestration. At \textbf{Level 1 (Non-Existent)}, applications operate with minimal or no telemetry instrumentation, leaving failures to be detected reactively through user complaints or catastrophic container termination. In \textbf{Level 2 (Initial / Ad-Hoc)}, unstandardized logs and localized metrics are captured on individual container instances or developer nodes, remaining siloed without centralized retention or cross-component correlation. In \textbf{Level 3 (Managed)}, multi-pillar telemetry (metrics, logs, traces) is systematically ingested into centralized datastores via standardized agents (e.g., Prometheus scrapers, Fluentd DaemonSets) and paired with threshold-based alerting. Progressing to \textbf{Level 4 (Optimized)}, telemetry data is semantically linked across microservice boundaries; unified visualization platforms (e.g., Grafana) enable contextual cross-navigation between metrics, trace spans, and associated log entries for rapid root-cause isolation. Finally, at \textbf{Level 5 (Predictive / Autonomic)}, the complete telemetry tuple is continuously processed by machine learning models and AIOps engines (e.g., Graph Attention Networks \cite{han_2024}) to anticipate performance degradation, automate anomaly localization, and trigger proactive Kubernetes autoscaling or self-healing workflows before service-level objectives (SLOs) are breached.
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.98\linewidth]{img/observability-architecture.png}
-    \caption{Observability Maturity Model (OMM) for Cloud-Native Applications.}
-    \Description{Architectural diagram illustrating the five evolutionary capability levels of the Observability Maturity Model: Level 1 Non-Existent, Level 2 Initial Ad-Hoc, Level 3 Managed, Level 4 Optimized, and Level 5 Predictive.}
-    \label{fig:obs-arch}
-\end{figure}
+% Posicionado aqui para que o LaTeX renderize na página da Seção 4.6 (antes das Referências)
+\input{figures/fig-research-roadmap}
+
+To provide software architects with a grounded diagnostic instrument for cloud-native platforms, we formalize the Observability Maturity Model (OMM), structured in Table~\ref{tab:omm_architecture}. Grounded in the design science principles of Becker et al. \cite{becker_2009}, de Bruin et al. \cite{debruin_2005}, and Pöppelbuß and Röglinger \cite{poppelbuss_2011}, and building upon the observability capability foundations \cite{valbusa_2025, agarwal_2022, nethala_2025, patel_2025} reviewed in Section~\ref{sec:background}, our model systematically derives its evolutionary stages from the empirical evidence synthesized across our 10 primary studies ($N = 10$). Following the procedural guidelines for maturity model development \cite{becker_2009, wendler_2012}, the OMM establishes mutually exclusive capability levels and actionable progression criteria tailored to the dynamic realities of Kubernetes clusters, overcoming the limitations of previous models that remained either abstract or disconnected from containerized orchestration. At \textbf{Level 1 (Non-Existent)}, applications operate with minimal or no telemetry instrumentation, leaving failures to be detected reactively through user complaints or catastrophic container termination. In \textbf{Level 2 (Initial / Ad-Hoc)}, unstandardized logs and localized metrics are captured on individual container instances or developer nodes, remaining siloed without centralized retention or cross-component correlation. In \textbf{Level 3 (Managed)}, multi-pillar telemetry (metrics, logs, traces) is systematically ingested into centralized datastores via standardized agents (e.g., Prometheus scrapers, Fluentd DaemonSets) and paired with threshold-based alerting. Progressing to \textbf{Level 4 (Optimized)}, telemetry data is semantically linked across microservice boundaries; unified visualization platforms (e.g., Grafana) enable contextual cross-navigation between metrics, trace spans, and associated log entries for rapid root-cause isolation. Finally, at \textbf{Level 5 (Predictive / Autonomic)}, the complete telemetry tuple is continuously processed by machine learning models and AIOps engines (e.g., Graph Attention Networks \cite{han_2024}) to anticipate performance degradation, automate anomaly localization, and trigger proactive Kubernetes autoscaling or self-healing workflows before service-level objectives (SLOs) are breached.
 
 \subsection{Strategic Research Roadmap}
-To address the limitations documented in Table~\ref{tab:related_works}, Figure~\ref{fig:research-road} outlines a strategic research roadmap structured around three advancement pillars. The first pillar, \textbf{Semantic Interoperability and Low-Overhead Instrumentation}, addresses the transition beyond fragmented collectors toward unified, non-intrusive telemetry pipelines. This requires deep integration of eBPF with OpenTelemetry standards to achieve kernel-to-application visibility with negligible CPU overhead, alongside formal standardization of metric histogram translations and label mappings between OTLP and Prometheus. The second pillar, \textbf{AIOps for Multimodal Telemetry Correlation}, focuses on developing scalable graph neural networks and correlation algorithms capable of processing the complete telemetry tuple $O = \{M, L, T, E\}$ to localize root causes in ephemeral container clusters without manual query construction \cite{han_2024}. The third pillar, \textbf{Autonomic and Sustainable Observability (GreenOps \& SecOps)}, targets Level 5 maturity by integrating real-time telemetry into autonomic Kubernetes control loops for energy-aware workload scheduling, carbon footprint reduction, and runtime threat detection \cite{deng_2024, kosinska_2023}.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.98\linewidth]{img/research-roadpmap.png}
-    \caption{Strategic Research Roadmap for Cloud-Native Observability.}
-    \Description{Strategic diagram showing the three advancement pillars of the research roadmap: Semantic Interoperability and Low-Overhead Instrumentation, AIOps for Multimodal Correlation, and Autonomic GreenOps/SecOps.}
-    \label{fig:research-road}
-\end{figure}
+To address the limitations documented in Table~\ref{tab:related_works}, Figure~\ref{fig:research-roadmap} outlines a strategic research roadmap structured around three advancement pillars. The first pillar, \textbf{Semantic Interoperability and Low-Overhead Instrumentation}, addresses the transition beyond fragmented collectors toward unified, non-intrusive telemetry pipelines. This requires deep integration of eBPF with OpenTelemetry standards to achieve kernel-to-application visibility with negligible CPU overhead, alongside formal standardization of metric histogram translations and label mappings between OTLP and Prometheus. The second pillar, \textbf{AIOps for Multimodal Telemetry Correlation}, focuses on developing scalable graph neural networks and correlation algorithms capable of processing the complete telemetry tuple $O = \{M, L, T, E\}$ to localize root causes in ephemeral container clusters without manual query construction \cite{han_2024}. The third pillar, \textbf{Autonomic and Sustainable Observability (GreenOps \& SecOps)}, targets Level 5 maturity by integrating real-time telemetry into autonomic Kubernetes control loops for energy-aware workload scheduling, carbon footprint reduction, and runtime threat detection \cite{deng_2024, kosinska_2023}.
 
 \section{Conclusion}
 \label{sec:conclusion}
@@ -257,7 +251,7 @@ To bridge these gaps, this work contributed: (1) a systematic analysis of Kubern
 \textbf{Author Contributions:} Author 1 conceived the study, conducted database queries, executed screening, and synthesized the findings. Author 2 advised on review methodology, verified the protocol, and performed paired cross-validation. Author 3 supervised the research, reviewed the architecture derivation, and contributed to discussions and conclusions. All authors read, revised, and approved the final manuscript.
 
 \section*{Artifact Availability}
-To ensure reproducibility, auditability, and scientific transparency in alignment with Open Science standards, the complete replication package—comprising the Parsifal protocol, database-specific query adaptations, the $N = 312$ raw bibliographic records with abstracts, the screening log detailing individual exclusion justifications, the $N = 10$ primary study extraction matrix, and the deterministic automation script (\texttt{startup.py})—is publicly available in the \href{https://github.com/fagnerffcs/observability-rapid-review-paper}{GitHub repository}.
+To ensure reproducibility, auditability, and scientific transparency in alignment with Open Science standards, the complete replication package—comprising the Parsifal protocol, database-specific query adaptations, the $N = 312$ raw bibliographic records with abstracts, the screening log detailing individual exclusion justifications, the $N = 10$ primary study extraction matrix, and the deterministic automation script (\texttt{startup.py})—is publicly available in the anonymized repository at \href{https://anonymous.4open.science/r/observability-rapid-review-paper}{Anonymous GitHub}.
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{sample-base}
