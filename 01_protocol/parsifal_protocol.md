@@ -62,10 +62,10 @@ January 2018 – October 2025
 
 ## 6. Quality Assessment (QA) Instrument
 Primary studies assessed for eligibility were evaluated against four quality criteria scored as Yes (1.0), Partially (0.5), or No (0.0):
-- **QA1:** Are the research objectives and cloud-native observability scope clearly defined?
+- **QA1:** Are the research objectives and cloud-native observability scope explicitly defined?
 - **QA2:** Is the architectural design, taxonomy, or review protocol explicitly documented and reproducible?
 - **QA3:** Are open-source tools and Kubernetes integration layers analyzed with concrete technical depth?
-- **QA4:** Are the findings, limitations, and empirical evaluations clearly substantiated?
+- **QA4:** Are the findings, limitations, and empirical evaluations rigorously substantiated?
 
 Quality threshold for synthesis inclusion: Total QA $\ge 3.0 / 4.0$.
 
